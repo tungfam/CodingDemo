@@ -12,7 +12,7 @@
 		F513CB90218260B1006F1248 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F513CB8F218260B1006F1248 /* AppDelegate.swift */; };
 		F513CB97218260B4006F1248 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F513CB96218260B4006F1248 /* Assets.xcassets */; };
 		F513CB9A218260B4006F1248 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F513CB98218260B4006F1248 /* LaunchScreen.storyboard */; };
-		F513CBA5218260B5006F1248 /* CodingDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F513CBA4218260B5006F1248 /* CodingDemoTests.swift */; };
+		F513CBA5218260B5006F1248 /* NumbersFactsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F513CBA4218260B5006F1248 /* NumbersFactsViewModelTests.swift */; };
 		F513CBB72182689E006F1248 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F513CBB62182689E006F1248 /* TabBarController.swift */; };
 		F513CBBA21826B6A006F1248 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F513CBB921826B6A006F1248 /* AppCoordinator.swift */; };
 		F513CBBC21826DD6006F1248 /* Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F513CBBB21826DD6006F1248 /* Tracker.swift */; };
@@ -29,6 +29,8 @@
 		F513CBDB21828526006F1248 /* WordsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F513CBDA21828526006F1248 /* WordsGenerator.swift */; };
 		F513CBDE218287FC006F1248 /* NumberFactViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F513CBDD218287FC006F1248 /* NumberFactViewData.swift */; };
 		F513CBE021829880006F1248 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F513CBDF21829880006F1248 /* CustomError.swift */; };
+		F573750621845FFA00916E28 /* NumbersServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F573750521845FFA00916E28 /* NumbersServiceMock.swift */; };
+		F573750821847F2900916E28 /* NumbersFactsViewControllerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = F573750721847F2900916E28 /* NumbersFactsViewControllerState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +56,7 @@
 		F513CB99218260B4006F1248 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F513CB9B218260B4006F1248 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F513CBA0218260B5006F1248 /* CodingDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodingDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F513CBA4218260B5006F1248 /* CodingDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingDemoTests.swift; sourceTree = "<group>"; };
+		F513CBA4218260B5006F1248 /* NumbersFactsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersFactsViewModelTests.swift; sourceTree = "<group>"; };
 		F513CBA6218260B5006F1248 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F513CBB62182689E006F1248 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		F513CBB921826B6A006F1248 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -72,6 +74,8 @@
 		F513CBDA21828526006F1248 /* WordsGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsGenerator.swift; sourceTree = "<group>"; };
 		F513CBDD218287FC006F1248 /* NumberFactViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFactViewData.swift; sourceTree = "<group>"; };
 		F513CBDF21829880006F1248 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
+		F573750521845FFA00916E28 /* NumbersServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersServiceMock.swift; sourceTree = "<group>"; };
+		F573750721847F2900916E28 /* NumbersFactsViewControllerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersFactsViewControllerState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,7 +154,8 @@
 		F513CBA3218260B5006F1248 /* CodingDemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				F513CBA4218260B5006F1248 /* CodingDemoTests.swift */,
+				F573750421845F2B00916E28 /* Mocks */,
+				F513CBA4218260B5006F1248 /* NumbersFactsViewModelTests.swift */,
 				F513CBA6218260B5006F1248 /* Info.plist */,
 			);
 			path = CodingDemoTests;
@@ -286,8 +291,17 @@
 			isa = PBXGroup;
 			children = (
 				F513CBDD218287FC006F1248 /* NumberFactViewData.swift */,
+				F573750721847F2900916E28 /* NumbersFactsViewControllerState.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		F573750421845F2B00916E28 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				F573750521845FFA00916E28 /* NumbersServiceMock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,6 +335,7 @@
 				F513CB9C218260B5006F1248 /* Sources */,
 				F513CB9D218260B5006F1248 /* Frameworks */,
 				F513CB9E218260B5006F1248 /* Resources */,
+				4A339ADC81C8E12E6816C00D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -391,6 +406,30 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4A339ADC81C8E12E6816C00D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CodingDemoTests/Pods-CodingDemoTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxTest.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CodingDemoTests/Pods-CodingDemoTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		749035C4ED8151552A7D7732 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -495,6 +534,7 @@
 				F513CBC821826FEE006F1248 /* NumbersService.swift in Sources */,
 				F513CBD721827C32006F1248 /* NumberFact.swift in Sources */,
 				F513CBBA21826B6A006F1248 /* AppCoordinator.swift in Sources */,
+				F573750821847F2900916E28 /* NumbersFactsViewControllerState.swift in Sources */,
 				F513CBD1218275B8006F1248 /* NumbersFactsView.swift in Sources */,
 				F513CB90218260B1006F1248 /* AppDelegate.swift in Sources */,
 				F513CBB72182689E006F1248 /* TabBarController.swift in Sources */,
@@ -507,7 +547,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F513CBA5218260B5006F1248 /* CodingDemoTests.swift in Sources */,
+				F573750621845FFA00916E28 /* NumbersServiceMock.swift in Sources */,
+				F513CBA5218260B5006F1248 /* NumbersFactsViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

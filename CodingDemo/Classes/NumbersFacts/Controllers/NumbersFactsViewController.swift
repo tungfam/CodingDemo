@@ -8,17 +8,17 @@
 
 import UIKit
 
+extension Error {
+    static func == (lhs: Error, rhs: Error) -> Bool {
+        return lhs.localizedDescription == rhs.localizedDescription
+    }
+}
+
 final class NumbersFactsViewController: BaseViewController {
 
     // MARK: Nested Structs
 
-    struct Props {
-        enum State {
-            case isLoading(Bool)
-            case alert(error: Error)
-            case showFact(NumberFactViewData)
-        }
-
+    struct Props: Equatable {
         let state: State
     }
 
@@ -65,7 +65,7 @@ final class NumbersFactsViewController: BaseViewController {
 
         let outputs = viewModel.makeOutputs(from: inputs)
 
-        outputs.state
+        outputs.props
             .observeForUI()
             .subscribe(onNext: { [unowned self] props in
                 self.render(state: props.state)

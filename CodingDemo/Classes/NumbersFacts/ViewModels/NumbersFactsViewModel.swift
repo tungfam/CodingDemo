@@ -19,7 +19,7 @@ final class NumbersFactsViewModel {
     }
 
     struct Outputs {
-        let state: Observable<NumbersFactsViewController.Props>
+        let props: Observable<NumbersFactsViewController.Props>
     }
 
     // MARK: - Private Properties
@@ -54,13 +54,13 @@ final class NumbersFactsViewModel {
         let emptyNumberErrorMessage = factTap
             .withLatestFrom(numberInput)
             .filter { $0.isEmpty }
-            .map { _ in "Please, input some number. For example, your favorite one!" }
+            .map { _ in "Please, input some number! For example, your favorite one :)" }
 
         let wrongNumberErrorMessage = factTap
             .withLatestFrom(numberInput)
             .filter { !$0.isEmpty }
             .filter { Int($0) == nil }
-            .map { _ in "Please, input a number. For example, a 5!" }
+            .map { _ in "Please, input a number! For example, a 5 :)" }
 
         let showFactState = factTap
             .withLatestFrom(numberInput) { (factType, numberInput) -> (NumberFactType, Int)? in
@@ -97,11 +97,11 @@ final class NumbersFactsViewModel {
             .merge(inputError, networkError)
             .map { NumbersFactsViewController.Props.State.alert(error: $0) }
 
-        let state = Observable
+        let props = Observable
             .merge(isLoadingState, alertState, showFactState)
             .map(NumbersFactsViewController.Props.init)
 
-        return Outputs(state: state)
+        return Outputs(props: props)
     }
 
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct NumberFact {
+struct NumberFact: Equatable {
     let type: NumberFactType
     let text: String
     let number: Int

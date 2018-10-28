@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct NumberFactViewData {
+struct NumberFactViewData: Equatable {
 
     private let numberFact: NumberFact
 
