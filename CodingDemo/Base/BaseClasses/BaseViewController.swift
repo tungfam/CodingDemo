@@ -37,6 +37,8 @@ class BaseViewController: UIViewController {
             loader.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             loader.centerYAnchor.constraint(equalTo: view.centerYAnchor)
             ])
+
+        loader.accessibilityIdentifier = "Loader"
     }
 
     @objc private func hideKeyboard() {
