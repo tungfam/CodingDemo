@@ -11,22 +11,18 @@ import RxSwift
 import RxTest
 @testable import CodingDemo
 
-class NumbersFactsViewModelTests: XCTestCase {
+class NumbersFactsViewModelTests: BaseTestCase {
 
     private var viewModel: NumbersFactsViewModel!
-    private var testScheduler: TestScheduler!
-    private var disposeBag: DisposeBag!
     private var numbersServiceMock: NumbersServiceMock!
 
     override func setUp() {
+        super.setUp()
+
         testScheduler = TestScheduler(initialClock: 0)
         disposeBag = DisposeBag()
         numbersServiceMock = NumbersServiceMock()
         viewModel = NumbersFactsViewModel(numbersService: numbersServiceMock)
-    }
-
-    override func tearDown() {
-
     }
 
     func test_correctAlertAppearance_onTriviaButtonTap_withEmptyInput() {

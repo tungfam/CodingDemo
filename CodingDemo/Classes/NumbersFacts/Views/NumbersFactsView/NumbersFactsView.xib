@@ -20,16 +20,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1gR-ER-bhL">
-                    <rect key="frame" x="137.5" y="120" width="100" height="30"/>
+                    <rect key="frame" x="112.5" y="90.5" width="150" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="100" id="509-ff-9fh"/>
+                        <constraint firstAttribute="width" constant="150" id="509-ff-9fh"/>
                     </constraints>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="rMe-fh-Qve">
-                    <rect key="frame" x="91.5" y="250" width="192" height="30"/>
+                    <rect key="frame" x="91.5" y="220.5" width="192" height="30"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t4Y-jp-pHk">
                             <rect key="frame" x="0.0" y="0.0" width="72" height="30"/>
@@ -41,16 +41,26 @@
                         </button>
                     </subviews>
                 </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXa-Jz-A5z">
+                    <rect key="frame" x="30" y="50" width="315" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="1gR-ER-bhL" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="ASI-fu-NeV"/>
+                <constraint firstItem="kXa-Jz-A5z" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="ILX-kU-qkx"/>
                 <constraint firstItem="rMe-fh-Qve" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="SQC-5v-xRs"/>
-                <constraint firstItem="1gR-ER-bhL" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="100" id="krh-FL-BMb"/>
+                <constraint firstItem="kXa-Jz-A5z" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="mt6-LZ-xF4"/>
+                <constraint firstItem="1gR-ER-bhL" firstAttribute="top" secondItem="kXa-Jz-A5z" secondAttribute="bottom" constant="20" id="r4f-HP-33a"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="kXa-Jz-A5z" secondAttribute="trailing" constant="30" id="v6R-VM-Gpm"/>
                 <constraint firstItem="rMe-fh-Qve" firstAttribute="top" secondItem="1gR-ER-bhL" secondAttribute="bottom" constant="100" id="yNh-Oj-CdO"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <connections>
+                <outlet property="descriptionLabel" destination="kXa-Jz-A5z" id="KFM-dc-qyl"/>
                 <outlet property="mathButton" destination="5ej-zk-P5S" id="FDO-d7-gKV"/>
                 <outlet property="numberInputTextField" destination="1gR-ER-bhL" id="Msb-2E-IWg"/>
                 <outlet property="triviaButton" destination="t4Y-jp-pHk" id="5zA-wH-gv6"/>
