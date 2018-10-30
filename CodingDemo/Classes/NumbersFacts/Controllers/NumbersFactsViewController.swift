@@ -27,6 +27,12 @@ final class NumbersFactsViewController: BaseViewController {
     private let viewModel: NumbersFactsViewModel
     private let wordsGenerator: WordsGeneratorProtocol
 
+    private var numbersFactsView: NumbersFactsView {
+        guard let view = self.view as? NumbersFactsView
+            else { fatalError("The view type should be NumbersFactsView") }
+        return view
+    }
+
     // MARK: - Initialization
 
     init(numbersFactsViewModel: NumbersFactsViewModel,
@@ -44,23 +50,24 @@ final class NumbersFactsViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         bindViewModel()
         setupTapAnywhereToHideKeyboard()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        numbersFactsView.openKeyboard()
     }
 
     // MARK: - Private Methods
 
     private func bindViewModel() {
-        guard let view = self.view as? NumbersFactsView
-            else {
-                assertionFailure("The view type should be NumbersFactsView")
-                return
-        }
-
         let inputs = NumbersFactsViewModel.Inputs(
-            numberInput: view.rx.numberInput,
-            triviaButtonTap: view.rx.triviaFactTap,
-            mathButtonTap: view.rx.mathFactTap
+            numberInput: numbersFactsView.rx.numberInput,
+            triviaButtonTap: numbersFactsView.rx.triviaFactTap,
+            mathButtonTap: numbersFactsView.rx.mathFactTap
         )
 
         let outputs = viewModel.makeOutputs(from: inputs)
