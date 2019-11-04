@@ -25,7 +25,7 @@ class NumbersFactsViewModelTests: BaseTestCase {
         viewModel = NumbersFactsViewModel(numbersService: numbersServiceMock)
     }
 
-    func test_correctAlertAppearance_onTriviaButtonTap_withEmptyInput() {
+    func testCorrectAlertAppearanceOnTriviaButtonTapWithEmptyInput() {
         let emptyNumberInput = testScheduler.createColdObservable([Recorded.next(50, "")])
             .asObservable()
 
@@ -52,7 +52,7 @@ class NumbersFactsViewModelTests: BaseTestCase {
         XCTAssertEqual(resultEvents, expectedEvents)
     }
 
-    func test_correctAlertAppearance_onMathButtonTap_withEmptyInput() {
+    func testCorrectAlertAppearanceOnMathButtonTapWithEmptyInput() {
         let emptyNumberInput = testScheduler.createColdObservable([Recorded.next(50, "")])
             .asObservable()
 
@@ -79,7 +79,7 @@ class NumbersFactsViewModelTests: BaseTestCase {
         XCTAssertEqual(resultEvents, expectedEvents)
     }
 
-    func test_correctAlertAppearance_onMathButtonTap_withInvalidInput() {
+    func testCorrectAlertAppearanceOnMathButtonTapWithInvalidInput() {
         let invalidNumberInput = testScheduler.createColdObservable(
             [Recorded.next(50, "characters input"),
              Recorded.next(150, "123.45")]
@@ -115,7 +115,7 @@ class NumbersFactsViewModelTests: BaseTestCase {
         XCTAssertEqual(resultEvents, expectedEvents)
     }
 
-    func test_correctAlertAppearance_onTriviaButtonTap_withInvalidInput() {
+    func testCorrectAlertAppearanceOnTriviaButtonTapWithInvalidInput() {
         let invalidNumberInput = testScheduler.createColdObservable([
             Recorded.next(50, "characters input"),
             Recorded.next(150, "123.45")
@@ -151,7 +151,7 @@ class NumbersFactsViewModelTests: BaseTestCase {
         XCTAssertEqual(resultEvents, expectedEvents)
     }
 
-    func test_correctAlertAppearance_onNetworkError_withValidInputAndTap() {
+    func testCorrectAlertAppearanceOnNetworkErrorWithValidInputAndTap() {
         numbersServiceMock.returnedNumberFact = Observable.error(CustomError.networking(message: "Network error"))
 
         let invalidNumberInput = testScheduler.createColdObservable([Recorded.next(50, "10")])
@@ -186,7 +186,7 @@ class NumbersFactsViewModelTests: BaseTestCase {
         XCTAssertEqual(resultEvents, expectedEvents)
     }
 
-    func test_correctFactAppearance_onTriviaButtonTap_withValidInput() {
+    func testCorrectFactAppearanceOnTriviaButtonTapWithValidInput() {
 
         // The values `factNumber` and `factText` are created in order to test
         // that was I stub is actually later presented
@@ -240,7 +240,7 @@ class NumbersFactsViewModelTests: BaseTestCase {
         }
     }
 
-    func test_correctFactAppearance_onMathButtonTap_withValidInput() {
+    func testCorrectFactAppearanceOnMathButtonTapWithValidInput() {
 
         // The values `factNumber` and `factText` are created in order to test
         // that was I stub is actually later presented
