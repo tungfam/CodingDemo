@@ -13,7 +13,7 @@ DEPENDENCIES:
   - SwiftLint
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - RxCocoa
     - RxSwift
     - RxTest
@@ -25,6 +25,6 @@ SPEC CHECKSUMS:
   RxTest: ea97a208826906f3904c0debdd09575ebcbfe216
   SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
 
-PODFILE CHECKSUM: d0388e31905f761e082823da025c365ba15f2fa4
+PODFILE CHECKSUM: 5a67dc78a3450c8fd5bc4cd2a0b943a37b951ea9
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.8.4
