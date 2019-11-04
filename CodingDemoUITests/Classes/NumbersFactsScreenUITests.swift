@@ -20,7 +20,7 @@ class NumbersFactsScreenUITests: XCTestCase {
     }
 
     // One function will contain all the tests for NumbersFacts scree to save time
-    func test_numbers_facts_showing_for_number_input() {
+    func testNotAppearingFactsOnWrongInputs() {
 
         let numbersFactsView = app.otherElements["NumbersFactsView"]
 
@@ -66,18 +66,18 @@ class NumbersFactsScreenUITests: XCTestCase {
         app.tap()
 
         XCTAssertTrue(noAlertsShown.alerts.count == 0)
+    }
 
-        // Test appearing the fact about a valid number
+    func testAppearingFactsForValidInput() {
+        let textField = app.textFields["NumberInputTextField"]
 
         let inputNumber = "10"
 
         textField.tap()
-        textField.clearAndEnterText(text: inputNumber)
+        textField.typeText(inputNumber)
 
+        let mathButton = app.buttons["MathButton"]
         mathButton.tap()
-
-        // Sometimes it fails sometimes not. Sounds like Xcode issue
-//        XCTAssertTrue(app.activityIndicators.count == 1)
 
         let mathFactAlert = app.alerts["Math fact about \(inputNumber)"]
         XCTAssertTrue(mathFactAlert.waitForExistence(timeout: 5))
@@ -88,9 +88,6 @@ class NumbersFactsScreenUITests: XCTestCase {
 
         let triviaButton = app.buttons["TriviaButton"]
         triviaButton.tap()
-
-        // Sometimes it fails sometimes not. Sounds like Xcode issue
-//        XCTAssertTrue(app.activityIndicators.count == 1)
 
         let triviaFactAlert = app.alerts["Trivia fact about \(inputNumber)"]
         XCTAssertTrue(triviaFactAlert.waitForExistence(timeout: 5))

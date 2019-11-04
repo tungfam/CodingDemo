@@ -8,12 +8,6 @@
 
 import UIKit
 
-extension Error {
-    static func == (lhs: Error, rhs: Error) -> Bool {
-        return lhs.localizedDescription == rhs.localizedDescription
-    }
-}
-
 final class NumbersFactsViewController: BaseViewController {
 
     // MARK: Nested Structs
@@ -94,5 +88,11 @@ final class NumbersFactsViewController: BaseViewController {
             message: factViewData.text,
             buttonTitle: wordsGenerator.generateNumberFactReactionWord()
         )
+    }
+}
+
+extension Error {
+    static func == (lhs: Error, rhs: Error) -> Bool {
+        return lhs.localizedDescription == rhs.localizedDescription
     }
 }
